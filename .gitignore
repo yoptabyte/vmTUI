@@ -1,0 +1,8 @@
+result
+.cache/
+.codex
+*.qcow2
+*.ovmf-vars.fd
+*.iso
+*.img
+*.img.gz

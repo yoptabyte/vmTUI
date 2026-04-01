@@ -1,0 +1,14 @@
+{
+  "bg":          "#11111B",
+  "panel":       "#1E1E2E",
+  "panelAlt":    "#181825",
+  "border":      "#313244",
+  "accent":      "#CBA6F7",
+  "accentSoft":  "#B4BEFE",
+  "success":     "#A6E3A1",
+  "danger":      "#F38BA8",
+  "warning":     "#F9E2AF",
+  "text":        "#CDD6F4",
+  "subtext":     "#A6ADC8",
+  "muted":       "#7F849C"
+}
