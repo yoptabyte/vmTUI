@@ -50,19 +50,6 @@
         '';
       };
 
-      vmctl-run = pkgs.writeShellApplication {
-        name = "vmctl";
-        runtimeInputs = [
-          pkgs.aria2
-          pkgs.go
-          pkgs.qemu_kvm
-        ];
-        text = ''
-          GOCACHE="$TMPDIR/vmctl-gocache" \
-          GOMODCACHE="$TMPDIR/vmctl-gomodcache" \
-          go run . "$@"
-        '';
-      };
     in
     {
       formatter.${system} = pkgs.nixfmt;
@@ -75,12 +62,12 @@
       apps.${system} = {
         default = {
           type = "app";
-          program = "${vmctl-run}/bin/vmctl";
+          program = "${vmctl}/bin/vmctl";
         };
 
         vmctl = {
           type = "app";
-          program = "${vmctl-run}/bin/vmctl";
+          program = "${vmctl}/bin/vmctl";
         };
       };
 
