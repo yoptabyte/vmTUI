@@ -54,12 +54,13 @@
         name = "vmctl";
         runtimeInputs = [
           pkgs.aria2
-          pkgs.babashka
           pkgs.go
           pkgs.qemu_kvm
         ];
         text = ''
-          VMCTL_SRC="${vmctlSrc}" bb ${./vmctl-run.bb} "$@"
+          GOCACHE="$TMPDIR/vmctl-gocache" \
+          GOMODCACHE="$TMPDIR/vmctl-gomodcache" \
+          go run . "$@"
         '';
       };
     in
@@ -86,15 +87,15 @@
       devShells.${system}.default = pkgs.mkShell {
         packages = [
           pkgs.aria2
-          pkgs.babashka
           pkgs.go
-          pkgs.gopls
-          pkgs.nixfmt
           pkgs.qemu_kvm
         ];
 
         shellHook = ''
-          bb ${./vmctl-shellhook.bb}
+          mkdir -p .cache/go-build .cache/go-mod
+          echo "vmctl dev shell"
+          echo "  run: go run ."
+          echo "  fmt: nix fmt"
         '';
       };
     };
