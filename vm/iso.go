@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-// ListCachedISOs returns downloaded ISO files from the vmctl ISO cache.
+// ListCachedISOs returns downloaded ISO files from the vmtui ISO cache.
 func ListCachedISOs() ([]string, error) {
 	entries, err := os.ReadDir(ISODir())
 	if os.IsNotExist(err) {

@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"vmctl/vm"
+	"vmtui/vm"
 )
 
 func TestFormScreenEditSavesAndReturnsToList(t *testing.T) {

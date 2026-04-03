@@ -6,7 +6,7 @@ import (
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
-	"vmctl/vm"
+	"vmtui/vm"
 )
 
 // ListModel is the main screen: shows all VMs with live status.

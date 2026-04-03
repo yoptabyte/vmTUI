@@ -40,7 +40,7 @@ type Store struct {
 
 func storeFile() string {
 	dir, _ := os.UserConfigDir()
-	return filepath.Join(dir, "vmctl", "vms.json")
+	return filepath.Join(dir, "vmtui", "vms.json")
 }
 
 // LoadStore reads the store from disk (or returns empty store if not found).

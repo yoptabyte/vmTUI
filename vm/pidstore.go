@@ -16,7 +16,7 @@ type PIDStore struct {
 
 func pidFile() string {
 	dir, _ := os.UserCacheDir()
-	return filepath.Join(dir, "vmctl", "pids.json")
+	return filepath.Join(dir, "vmtui", "pids.json")
 }
 
 func LoadPIDStore() *PIDStore {

@@ -150,9 +150,9 @@ func openLogFile(id string) (*os.File, error) {
 func LogDir() string {
 	cacheDir, err := os.UserCacheDir()
 	if err != nil || cacheDir == "" {
-		cacheDir = filepath.Join(os.TempDir(), "vmctl")
+		cacheDir = filepath.Join(os.TempDir(), "vmtui")
 	}
-	return filepath.Join(cacheDir, "vmctl", "logs")
+	return filepath.Join(cacheDir, "vmtui", "logs")
 }
 
 func LogPath(id string) string {

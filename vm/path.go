@@ -42,9 +42,9 @@ func ResolvePath(path string) string {
 func DiskDir() string {
 	dataDir, err := os.UserHomeDir()
 	if err != nil || dataDir == "" {
-		return filepath.Join(".", ".local", "share", "vmctl", "disks")
+		return filepath.Join(".", ".local", "share", "vmtui", "disks")
 	}
-	return filepath.Join(dataDir, ".local", "share", "vmctl", "disks")
+	return filepath.Join(dataDir, ".local", "share", "vmtui", "disks")
 }
 
 // DefaultDiskPath returns a default qcow2 path for a VM name.

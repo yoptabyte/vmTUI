@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"vmctl/vm"
+	"vmtui/vm"
 )
 
 type ListScreen struct{}

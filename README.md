@@ -71,10 +71,10 @@ nix run .
 nix profile install github:yoptabyte/vmTUI
 ```
 
-Then run `vmctl` from anywhere:
+Then run `vmtui` from anywhere:
 
 ```bash
-vmctl
+vmtui
 ```
 
 **Enter the development shell:**
@@ -97,8 +97,8 @@ go run .
 Or build a standalone binary:
 
 ```bash
-go build -o vmctl .
-./vmctl
+go build -o vmtui .
+./vmtui
 ```
 
 ## Usage

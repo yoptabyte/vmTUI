@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"vmctl/vm"
+	"vmtui/vm"
 )
 
 func TestCatalogScreenUseISOTransitionsToInstallScreen(t *testing.T) {

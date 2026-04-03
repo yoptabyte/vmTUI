@@ -103,7 +103,7 @@ func TestLoadStoreNormalizesLegacyConfig(t *testing.T) {
 	tempDir := t.TempDir()
 	t.Setenv("XDG_CONFIG_HOME", tempDir)
 
-	storePath := filepath.Join(tempDir, "vmctl", "vms.json")
+	storePath := filepath.Join(tempDir, "vmtui", "vms.json")
 	if err := os.MkdirAll(filepath.Dir(storePath), 0o755); err != nil {
 		t.Fatalf("MkdirAll() error = %v", err)
 	}

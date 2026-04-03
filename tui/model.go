@@ -4,7 +4,7 @@ import (
 	"time"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"vmctl/vm"
+	"vmtui/vm"
 )
 
 // ---- Tea messages ----

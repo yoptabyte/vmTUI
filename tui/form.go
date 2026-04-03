@@ -7,7 +7,7 @@ import (
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/huh"
-	"vmctl/vm"
+	"vmtui/vm"
 )
 
 // FormModel is shown when the user presses 'n' to create a new VM.

@@ -35,7 +35,7 @@ func CheckVersion(entry CatalogEntry, variant ImageVariant) string {
 	if err != nil {
 		return ""
 	}
-	req.Header.Set("User-Agent", "vmctl/1.0")
+	req.Header.Set("User-Agent", "vmtui/1.0")
 
 	resp, err := client.Do(req)
 	if err != nil {

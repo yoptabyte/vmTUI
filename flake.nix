@@ -12,7 +12,7 @@
       pkgs = import nixpkgs { inherit system; };
       lib = pkgs.lib;
 
-      vmctlSrc = lib.cleanSourceWith {
+      vmtuiSrc = lib.cleanSourceWith {
         src = self;
         filter =
           path: type:
@@ -22,10 +22,10 @@
           !(base == "result" || base == ".cache");
       };
 
-      vmctl-bin = pkgs.buildGoModule {
-        pname = "vmctl";
+      vmtui-bin = pkgs.buildGoModule {
+        pname = "vmtui";
         version = "0.1.0";
-        src = vmctlSrc;
+        src = vmtuiSrc;
         vendorHash = "sha256-pDWrBm5KANLz5GFEaJZupBM3d1hd9F6Vh0fHOmd1p5k=";
         env.CGO_ENABLED = 0;
         enableParallelBuilding = false;
@@ -35,12 +35,12 @@
         ];
       };
 
-      vmctl = pkgs.symlinkJoin {
-        name = "vmctl";
-        paths = [ vmctl-bin ];
+      vmtui = pkgs.symlinkJoin {
+        name = "vmtui";
+        paths = [ vmtui-bin ];
         nativeBuildInputs = [ pkgs.makeWrapper ];
         postBuild = ''
-          wrapProgram "$out/bin/vmctl" \
+          wrapProgram "$out/bin/vmtui" \
             --prefix PATH : ${
               lib.makeBinPath [
                 pkgs.aria2
@@ -55,19 +55,19 @@
       formatter.${system} = pkgs.nixfmt;
 
       packages.${system} = {
-        inherit vmctl;
-        default = vmctl;
+        inherit vmtui;
+        default = vmtui;
       };
 
       apps.${system} = {
         default = {
           type = "app";
-          program = "${vmctl}/bin/vmctl";
+          program = "${vmtui}/bin/vmtui";
         };
 
-        vmctl = {
+        vmtui = {
           type = "app";
-          program = "${vmctl}/bin/vmctl";
+          program = "${vmtui}/bin/vmtui";
         };
       };
 
@@ -80,7 +80,7 @@
 
         shellHook = ''
           mkdir -p .cache/go-build .cache/go-mod
-          echo "vmctl dev shell"
+          echo "vmtui dev shell"
           echo "  run: go run ."
           echo "  fmt: nix fmt"
         '';

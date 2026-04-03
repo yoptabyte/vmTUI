@@ -4,7 +4,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"vmctl/vm"
+	"vmtui/vm"
 )
 
 func beginInstall(m RootModel, cfg vm.VMConfig, prefill string) RootModel {

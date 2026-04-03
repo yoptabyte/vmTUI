@@ -275,13 +275,13 @@ func Catalog() []CatalogEntry {
 }
 
 // ISODir returns the directory where downloaded ISOs are stored.
-// Defaults to ~/.cache/vmctl/iso/
+// Defaults to ~/.cache/vmtui/iso/
 func ISODir() string {
 	dir, err := os.UserCacheDir()
 	if err != nil || dir == "" {
-		return filepath.Join(".", ".cache", "vmctl", "iso")
+		return filepath.Join(".", ".cache", "vmtui", "iso")
 	}
-	return filepath.Join(dir, "vmctl", "iso")
+	return filepath.Join(dir, "vmtui", "iso")
 }
 
 // LocalISOPath returns the expected local path for a downloaded variant.

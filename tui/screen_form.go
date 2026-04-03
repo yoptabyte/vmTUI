@@ -5,7 +5,7 @@ import (
 	"os"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"vmctl/vm"
+	"vmtui/vm"
 )
 
 type FormScreen struct {

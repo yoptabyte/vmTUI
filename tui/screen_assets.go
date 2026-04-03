@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"vmctl/vm"
+	"vmtui/vm"
 )
 
 type AssetsScreen struct{}
@@ -66,7 +66,7 @@ func (s AssetsScreen) Update(m RootModel, msg tea.Msg) (RootModel, tea.Cmd) {
 				return m, nil
 			}
 			if !isCachedISO(entry.Path) {
-				m.assetErr = "Only ISO files inside the vmctl cache can be deleted here"
+				m.assetErr = "Only ISO files inside the vmtui cache can be deleted here"
 				return m, nil
 			}
 			if len(entry.OwnerIDs) > 0 {

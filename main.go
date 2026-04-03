@@ -5,8 +5,8 @@ import (
 	"os"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"vmctl/tui"
-	"vmctl/vm"
+	"vmtui/tui"
+	"vmtui/vm"
 )
 
 func main() {

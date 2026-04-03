@@ -61,7 +61,7 @@ func TestVerifySHA256(t *testing.T) {
 	t.Parallel()
 
 	path := filepath.Join(t.TempDir(), "sample.iso")
-	content := []byte("vmctl test payload")
+	content := []byte("vmtui test payload")
 	if err := os.WriteFile(path, content, 0o600); err != nil {
 		t.Fatalf("WriteFile() error = %v", err)
 	}
